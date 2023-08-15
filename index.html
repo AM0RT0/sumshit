@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bryan</title>
+</head>
+<body>
+<div class="container">
+    <div style="margin: 30px;">
+    <h1 style="text-align: center;">B.R.Y.A.N</h1>
+    <p style="color: gray;">-Brilliantly Responsive, Yet Attentive Navigational Artificial Intelligence</p>
+    </div>
+    <hr style="border: 0px solid; height: 1px; width: 30%; background-color: gray; margin: 50px;">
+    <div style="margin: 30px; width: 100%; display: flex; align-items: center; flex-direction: column;">
+        <h2 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 100;">Something you wanna ask?
+        </h2>
+
+        <button class="qsbtn" id="sendbtn" onclick="sprecog()">Start</button>
+
+        <button id="ChangeLangBtn" onclick="showLang()" >Change Language</button>
+        <div class="ChangeLang" id="LangBtn" style="display: none;">
+            <button id="engl" onclick="setLang('en-US')">English 🇺🇸</button>
+            <button id="hind" onclick="setLang('hi-IN')">Hindi 🇮🇳</button>
+            <button id="beng" onclick="setLang('bn-IN')">Bengali 🇮🇳</button>
+            <button id="tami" onclick="setLang('ta-IN')">Tamil 🇮🇳</button>
+            <button id="span" onclick="setLang('es-ES')">Spanish 🇪🇸</button>
+            <button id="fran" onclick="setLang('fr-FR')">French 🇫🇷</button>
+            <button id="mand" onclick="setLang('zh-CN')">Mandarin 🇨🇳</button>
+            <button id="russ" onclick="setLang('ru-RU')">Russian 🇷🇺</button>
+            <button id="germ" onclick="setLang('de-DE')">German 🇩🇪</button>
+            <button id="port" onclick="setLang('pt-PT')">Portuguese 🇵🇹</button>
+            <button id="arab" onclick="setLang('ar-SA')">Arabic 🇸🇦</button>
+            <button id="kore" onclick="setLang('ko-KR')">Korean 🇰🇷</button>
+            <button id="japa" onclick="setLang('ja-JP')">Japanese 🇯🇵</button>
+        </div>
+
+
+    </div>
+</div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
