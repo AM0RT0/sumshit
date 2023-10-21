@@ -1,82 +1,129 @@
-html, body{
-    width: 100%;
-    height: 100%;
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(0, 0, 0));
-    color: white;   
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-.container{
-    width: 100%;
-    height: 100%;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-}
-.qsbtn{
-    width: 50%;
-    height: 50px;
-    padding: 10px;
-    border: 0px;
-    background-color: rgb(1, 109, 109);
-    color: white;
-    border-radius: 200px;
-}
-@media (hover:hover) {
-    .qsbtn:hover{
-        background-color: rgb(0, 113, 189);
-    }    
-}
-.qsbtn:active{
-    background-color: rgb(0, 166, 255);
-    color: white;
-}
-.qsbtn:disabled{
-    background-color: gray;
-}
-/* Styles for the language buttons */
-.ChangeLang {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px;
+    min-height: 100vh;
 }
 
-#LangBtn button {
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    background-color: #333a7975;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Apply Segoe UI font */
+#background-video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
-#LangBtn button:hover {
-    background-color: #272c5c75;
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-#ChangeLangBtn {
+
+#logo {
     position: absolute;
-    top: 10px; /* Adjust the distance from the top */
-    right: 10px; /* Adjust the distance from the right */
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    background-color: #333a7975;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Apply Segoe UI font */
+    top: 10px; /* Adjust the top distance as needed */
+    left: 10px; /* Adjust the left distance as needed */
+    z-index: 2;
+    display: flex;
+    align-items: start;
+    background-color: transparent;
+    color: #fff;
 }
 
-#ChangeLangBtn button:hover {
-    background-color: #272c5c75;
+#amorto, #X, #valo {
+    width: auto; /* Set the width as needed */
+    height: 30px;
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+
+#box {
+    z-index: 2;
+    background-color: transparent;
+    color: #333;
+    width: 70%; /* Set the width as per your requirements */
+    max-width: 400px; /* Set the maximum width */
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: aliceblue;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(5px); /* Apply a blur effect to the box */
+}
+
+#login {
+    font-size: 24px;
+    color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+    font-stretch: narrower;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="button"] {
+    width: 70%; /* Set the width as per your requirements */
+    max-width: 400px; /* Set the maximum width */
+    padding: 10px;
+    margin: 10px auto; /* Center the input elements horizontally */
+    border: 1px solid #fff;
+    border-radius: 3px;
+    font-size: 16px;
+    background-color: transparent;
+    color: #fff;
+}
+input::placeholder {
+    color: #ffffff77; /* Change the color of the placeholder text */
+    font-size: 14px; /* Change the font size of the placeholder text */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+    font-stretch: narrower;
+}
+
+input:active {
+    background-color: transparent;
+}
+
+#signInBtn {
+    background-color: #ffffff11;
+    border: 1px solid #fff; /* Solid white border for the button */
+    cursor: pointer;
+    backdrop-filter: blur(5px); /* Apply a blur effect to the box */
+    color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+    font-stretch: narrower;
+}
+
+#signInBtn:hover {
+    background-color: #ffffff63;
+}
+#signInBtn:active {
+    background-color: #a0a0a063;
+}
+
+img {
+    width: 150px;
+    height: auto;
+    background-color: transparent;
+}
+
+#text1,
+#text2 {
+    font-size: 14px;
+    color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+    font-stretch: narrower;
+}
+
+#signInBtn, #userEmail, #userPass {
+    cursor: pointer;
 }
