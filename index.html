@@ -1,30 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Site</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Red and Green Buttons</title>
 </head>
 <body>
-    <div id="logo">
-        <img src="amorto.png" alt="@AMORTO" id="amorto"><img src="x.png" alt="X" id="X"><img src="valo.png" alt="Valorant" id="valo">
+    <button id="redButton">Red</button>
+    <button id="greenButton">Green</button>
+    <div id="redContent" style="display: none;">
+        <input type="text" id="redInput" placeholder="Enter text">
+        <button id="redSaveButton">Save to red.txt</button>
     </div>
+    <div id="greenContent" style="display: none;">
+        <input type="text" id="greenInput" placeholder="Enter text">
+        <button id="greenSaveButton">Save to green.txt</button>
+    </div>
+    <button id="showMsgButton">Show Message</button>
 
-    <div id="background-video-container">
-        <video id="background-video" autoplay muted loop>
-            <source src="bgvid.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
+    <script>
+        const redButton = document.getElementById("redButton");
+        const greenButton = document.getElementById("greenButton");
+        const redContent = document.getElementById("redContent");
+        const greenContent = document.getElementById("greenContent");
+        const redInput = document.getElementById("redInput");
+        const greenInput = document.getElementById("greenInput");
+        const redSaveButton = document.getElementById("redSaveButton");
+        const greenSaveButton = document.getElementById("greenSaveButton");
+        const showMsgButton = document.getElementById("showMsgButton");
 
-    <div id="box">
-        <h1 id="login">Login</h1>
-        <input type="email" name="email" id="userEmail" placeholder="Email">
-        <input type="password" name="pass" id="userPass" placeholder="Password">
-        <p id="text1">-End to End Encrypted-</p>
-        <input type="button" value="Sign In" id="signInBtn">
-        <p id="text2">AMORTO X Valorant</p>
-    </div>
+        let redText = "";
+        let greenText = "";
+
+        redButton.addEventListener("click", () => {
+            redContent.style.display = "block";
+            greenContent.style.display = "none";
+        });
+
+        greenButton.addEventListener("click", () => {
+            greenContent.style.display = "block";
+            redContent.style.display = "none";
+        });
+
+        redSaveButton.addEventListener("click", () => {
+            redText = redInput.value;
+            saveTextToFile("red.txt", redText);
+        });
+
+        greenSaveButton.addEventListener("click", () => {
+            greenText = greenInput.value;
+            saveTextToFile("green.txt", greenText);
+        });
+
+        showMsgButton.addEventListener("click", () => {
+            if (redContent.style.display === "block") {
+                alert("Red wrote: " + greenText);
+            } else {
+                alert("Green wrote: " + redText);
+            }
+        });
+
+        function saveTextToFile(filename, text) {
+            const blob = new Blob([text], { type: "text/plain" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = filename;
+            a.click();
+        }
+    </script>
 </body>
 </html>
