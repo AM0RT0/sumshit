@@ -14,7 +14,7 @@
         <input type="text" id="greenInput" placeholder="Enter text">
         <button id="greenSaveButton">Save to green.txt</button>
     </div>
-    <button id="showMsgButton">Show Message</button>
+    <button id="showMsgButton" style="display: none;">Show Message</button>
 
     <script>
         const redButton = document.getElementById("redButton");
@@ -33,11 +33,13 @@
         redButton.addEventListener("click", () => {
             redContent.style.display = "block";
             greenContent.style.display = "none";
+            showMsgButton.style.display = "none"; // Hide the Show Message button
         });
 
         greenButton.addEventListener("click", () => {
             greenContent.style.display = "block";
             redContent.style.display = "none";
+            showMsgButton.style.display = "none"; // Hide the Show Message button
         });
 
         redSaveButton.addEventListener("click", () => {
